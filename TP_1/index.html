@@ -1,189 +1,182 @@
-
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-	<style type="text/css">
-		body {
-			padding-bottom: 50px;
-			font-family: Arial, Helvetica, sans-serif;
-		}
-		h1, h2, h3, h4 {
-			font-family: Vedrana, Arial, Helvetica, sans-serif;
-			margin-bottom: 10px;
-		}
-		#section-cachee {
-			display: none;
-		}
-	</style>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style type="text/css">
+            body {
+                padding-bottom: 50px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-family: Vedrana, Arial, Helvetica, sans-serif;
+                margin-bottom: 10px;
+            }
+
+            #section-cachee {
+                display: none;
+            }
+        </style>
 
 
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-</head>
-<body>
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Mon premier TP jQuery</h1>
+            <div class="subtitle">
+                Les premiers pas ne sont pas les plus faciles
+            </div>
+        </header>
+        <section>
+            <h2>Quelques liens utiles</h2>
+            <ul id="links-list">
+                <li>
+                    <a href="http://jquery.com/" target="_blank">Le site de jquery</a>
+                </li>
+                <li>
+                    <a href="http://openclassrooms.com/courses/simplifiez-vos-developpements-javascript-avec-jquery" target="_blank">Cours OpenClassrooms</a>
+                </li>
+                <li>
+                    <a href="#">Ce lien ne sert à rien</a>
+                </li>
+                <li>
+                    <a href="http://www.grafikart.fr/tutoriels/jquery" target="_blank">Tutos chez graphikart</a>
+                </li>
+            </ul>
+        </section>
+        <section id="section1">
+            <h2>Une suite de paragraphes</h2>
+            <p>Premier paragraphe</p>
+            <p id="deuxieme-du-nom">Second paragraphe</p>
+            <p>Troisième paragraphe</p>
+            <p>Quatrième paragraphe</p>
+            <p>Cinquième paragraphe</p>
+        </section>
+        <section>
+            <h2>Un formulaire</h2>
+            <form action="#" method="post" onsubmit="return false;">
+                <fieldset id="checkboxes-fieldset">
+                    <legend>Une suite de case à cocher</legend>
+                    <label for="chk1"><input type="checkbox" name="chk1" id="chk1" disabled="disabled" /> Cette case à cochée est désactivée</label><br/>
+                    <label for="chk2"><input type="checkbox" name="chk2" id="chk2" /> Cette case à cochée est active mais non cochée</label><br/>
+                    <label for="chk3"><input type="checkbox" name="chk3" id="chk3" /> Cette case à cochée est active mais non cochée</label><br/>
+                    <label for="chk4"><input type="checkbox" name="chk4" id="chk4" checked="checked" /> Cette case à cochée est active ET cochée</label>
+                </fieldset>
+                <fieldset id="sizable-inputs">
+                    <legend>&Eacute;lements de même largeur</legend>
+                    <input type="text" name="txt1" id="txt1" placeholder="Mon input 1" /><br/>
+                    <textarea name="area1" id="area1" cols="30" rows="10"></textarea><br/>
+                    <select name="sel1" id="sel1">
+                        <option value="1">Option super</option>
+                        <option value="2">Option encore mieux !</option>
+                        <option value="3">Option inutile</option>
+                    </select>
+                </fieldset>
+            </form>
+        </section>
+        <section id="cible-de-choix">
+            <h2>Une cible de choix</h2>
+            <p>Vous aurez normalement des trucs qui vont apparaître ici ou pas loin.</p>
+            <div id="sous-cible"></div>
+        </section>
+        <section id="section-cachee">
+            <div id="a-faire-apparaitre">
+                Yep, I'm not a ninja anymore...
+            </div>
+            <div id="hide-and-seek">
+                Oh no... you found me
+            </div>
+            <div id="ninja2">Ninja II, le retour !</div>
+            <div id="nija3">Le ninja de trop...</div>
+            <div id="ninja1">Ninja !</div>
+        </section>
+        <footer>Page crée pour la licence pro ATC webmestre. &copy; Copyright 2015 Tous droits réservés.</footer>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
 
-	<header>
-		<h1>Mon premier TP jQuery</h1>
-		<div class="subtitle">
-			Les premiers pas ne sont pas les plus faciles
-		</div>
-	</header>
-
-	<section>
-		<h2>Quelques liens utiles</h2>
-		<ul id="links-list">
-			<li>
-				<a href="http://jquery.com/" target="_blank">Le site de jquery</a>
-			</li>
-			<li>
-				<a href="http://openclassrooms.com/courses/simplifiez-vos-developpements-javascript-avec-jquery" target="_blank">Cours OpenClassrooms</a>
-			</li>
-			<li>
-				<a href="#">Ce lien ne sert à rien</a>
-			</li>
-			<li>
-				<a href="http://www.grafikart.fr/tutoriels/jquery" target="_blank">Tutos chez graphikart</a>
-			</li>
-		</ul>
-	</section>
-
-	<section id="section1">
-		<h2>Une suite de paragraphes</h2>
-		<p>Premier paragraphe</p>
-		<p id="deuxieme-du-nom">Second paragraphe</p>
-		<p>Troisième paragraphe</p>
-		<p>Quatrième paragraphe</p>
-		<p>Cinquième paragraphe</p>
-	</section>
-
-	<section>
-		<h2>Un formulaire</h2>
-
-		<form action="#" method="post" onsubmit="return false;">
-			<fieldset id="checkboxes-fieldset">
-				<legend>Une suite de case à cocher</legend>
-				<label for="chk1"><input type="checkbox" name="chk1" id="chk1" disabled="disabled" /> Cette case à cochée est désactivée</label><br/>
-				<label for="chk2"><input type="checkbox" name="chk2" id="chk2" /> Cette case à cochée est active mais non cochée</label><br/>
-				<label for="chk3"><input type="checkbox" name="chk3" id="chk3" /> Cette case à cochée est active mais non cochée</label><br/>
-				<label for="chk4"><input type="checkbox" name="chk4" id="chk4" checked="checked" /> Cette case à cochée est active ET cochée</label>
-			</fieldset>
-
-			<fieldset id="sizable-inputs">
-				<legend>&Eacute;lements de même largeur</legend>
-				<input type="text" name="txt1" id="txt1" placeholder="Mon input 1" /><br/>
-				<textarea name="area1" id="area1" cols="30" rows="10"></textarea><br/>
-				<select name="sel1" id="sel1">
-					<option value="1">Option super</option>
-					<option value="2">Option encore mieux !</option>
-					<option value="3">Option inutile</option>
-				</select>
-			</fieldset>
+                //	Galop d'essai
+                //************************************************
+                //Remplacer le titre de la page (celui qui s'affiche dans l'onglet) par : "jQuery : TP 1"
+                $('title').text('jQuery : TP 1');
+                //Changer la couleur du titre h1 par la valeur rgb(8,104,172)
+                $('h1').css('color', 'rgb(8,104,172)');
+                //Appliquez les propriétés CSS suivantes à l'élément <footer> (utiliser une seule fonction, avec un bloc d'options)
+                /*
+                 position :fixed,
+                 bottom: 0,
+                 height: 34px,
+                 line-height : 34px,
+                 text-align : center,
+                 width: 100%,
+                 z-index : 10,
+                 background : #ccc
+                 */
+                $('footer').css({
+                    position: 'fixed',
+                    bottom: 0,
+                    height: 34,
+                    'line-height': '34px',
+                    'text-align': 'center',
+                    width: '100%',
+                    'z-index': 1,
+                    background: '#CCC'
+                });
 
 
-		</form>
-	</section>
+                //	PARAGRAPHES (section1 uniquement)
+                //************************************************
+                //Mettre tous les paragraphes en italique sauf selui qui a pour id "deuxieme-du-nom"
+                $('#section1 p:not(#deuxieme-du-nom)').css('font-style', 'italic');
+                //Mettre le quatrième paragraphe en rouge #900
+                $('#section1 p:nth-of-type(4)').css('color', '#900');
+                //Mettre tous les paragraphes pairs en souligné
+                $('#section1 p:nth-of-type(2n)').css('text-decoration', 'underline');
+                //Ajouter un paragraphe 2.5 entre le deuxième et troisième, mettez-y le contenu que vous voulez !
+                $('#section1 p:nth-of-type(2)').after('<p>&nbsp;&nbsp;&nbsp;&nbsp;JE SUIS UN PARAGRAPHE !!!!!</p>');
 
-	<section id="cible-de-choix">
-		<h2>Une cible de choix</h2>
-		<p>Vous aurez normalement des trucs qui vont apparaître ici ou pas loin.</p>
-		<div id="sous-cible"></div>
-	</section>
+                //	CONTENU CACHE
+                //************************************************
+                //Mettez la div avec l'id a-faire-apparaitre dans la div avec l'id sous-cible
+                $('#a-faire-apparaitre').appendTo($('#sous-cible'));
+                //Mettez la div avec l'id hide-and-seek dans la div avec l'id sous-cible avant celle qui a pour id a-faire-apparaitre (utiliser prepend)
+                $('#hide-and-seek').prependTo($('#sous-cible'));
+                //Metre les trois ninjas dans l'ordre avant la div #sous-cible
+                //ninja2
+                //ninja3
+                //ninja1
+                $('#sous-cible').before($('#ninja1'));
+                $('#sous-cible').before($('#ninja2'));
+                $('#sous-cible').before($('#nija3'));
 
-	<section id="section-cachee">
-		<div id="a-faire-apparaitre">
-			Yep, I'm not a ninja anymore...
-		</div>
-		<div id="hide-and-seek">
-			Oh no... you found me
-		</div>
+                //	FORMULAIRE
+                //************************************************
+                //Mettre toutes les checkboxes cochées en gras
+                $('form input[type="checkbox"]:checked').parent().css('font-weight', 'bold');
+                //Mettre toutes les checkboxes désactivées en gris
+                $('form input[type="checkbox"]:disabled').parent().css('background-color', '#999');
+                //Dans le formulaire, faites en sorte que l'input, le select et le textarea aient tous une largeur de 250 pixels (avec un seul sélecteur)
+                $('form :input').css('width', 250);
 
-		<div id="ninja2">Ninja II, le retour !</div>
-		<div id="nija3">Le ninja de trop...</div>
-		<div id="ninja1">Ninja !</div>
+                // LIENS UTILES
+                //************************************************
+                //Ajouter un lien à la fin des liens utiles (un a dans un li) avec pour url "http://news.humancoders.com/t/javascript" et libellé "Les news du JavaScript sur Human Coders"
+                //Faites le en deux étapes, premièrement ajoutez l'élément li à la fin du ul
+                //Ensuite ajoutez le lien à l'intérieur (ne pas utiliser :eq pour cibler le li voulu)
+                $('#links-list')
+                    .append($('<li />')
+                        .append($('<a />', {
+                            href: 'http://news.humancoders.com/t/javascript',
+                            text: 'Les news du JavaScript sur Human Coders'
+                        }))
+                    );
 
-	</section>
 
-	<footer>Page crée pour la licence pro ATC webmestre. &copy; Copyright 2015 Tous droits réservés.</footer>
-
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-
-			//	Galop d'essai
-			//************************************************
-			//Remplacer le titre de la page (celui qui s'affiche dans l'onglet) par : "jQuery : TP 1"
-            $('title').text('jQuery : TP 1');
-			//Changer la couleur du titre h1 par la valeur rgb(8,104,172)
-            $('h1').css('color', 'rgb(8,104,172)');
-			//Appliquez les propriétés CSS suivantes à l'élément <footer> (utiliser une seule fonction, avec un bloc d'options)
-			/*
-			 position :fixed,
-			 bottom: 0,
-			 height: 34px,
-			 line-height : 34px,
-			 text-align : center,
-			 width: 100%,
-			 z-index : 10,
-			 background : #ccc
-			 */
-            $('footer').css({
-                position: 'fixed',
-                bottom: 0,
-                height: 34,
-                'line-height': '34px',
-                'text-align': 'center',
-                width: '100%',
-                'z-index': 1,
-                background: '#CCC'
             });
-
-
-			//	PARAGRAPHES (section1 uniquement)
-			//************************************************
-			//Mettre tous les paragraphes en italique sauf selui qui a pour id "deuxieme-du-nom"
-            $('#section1 p:not(#deuxieme-du-nom)').css('font-style', 'italic');
-			//Mettre le quatrième paragraphe en rouge #900
-            $('#section1 p:nth-of-type(4)').css('color', '#900');
-			//Mettre tous les paragraphes pairs en souligné
-            $('#section1 p:nth-of-type(2n)').css('text-decoration', 'underline');
-			//Ajouter un paragraphe 2.5 entre le deuxième et troisième, mettez-y le contenu que vous voulez !
-            $('#section1 p:nth-of-type(2)').after('<p>&nbsp;&nbsp;&nbsp;&nbsp;JE SUIS UN PARAGRAPHE !!!!!</p>');
-
-			//	CONTENU CACHE
-			//************************************************
-			//Mettez la div avec l'id a-faire-apparaitre dans la div avec l'id sous-cible
-            $('#a-faire-apparaitre').appendTo($('#sous-cible'));
-			//Mettez la div avec l'id hide-and-seek dans la div avec l'id sous-cible avant celle qui a pour id a-faire-apparaitre (utiliser prepend)
-            $('#hide-and-seek').prependTo($('#sous-cible'));
-			//Metre les trois ninjas dans l'ordre avant la div #sous-cible
-			//ninja2
-			//ninja3
-			//ninja1
-            $('#sous-cible').before($('#ninja1'));
-            $('#sous-cible').before($('#ninja2'));
-            $('#sous-cible').before($('#nija3'));
-
-			//	FORMULAIRE
-			//************************************************
-			//Mettre toutes les checkboxes cochées en gras
-            $('form input[type="checkbox"]:checked').parent().css('font-weight', 'bold');
-			//Mettre toutes les checkboxes désactivées en gris
-            $('form input[type="checkbox"]:disabled').parent().css('background-color', '#999');
-			//Dans le formulaire, faites en sorte que l'input, le select et le textarea aient tous une largeur de 250 pixels (avec un seul sélecteur)
-            $('form :input').css('width', 250);
-
-			// LIENS UTILES
-			//************************************************
-			//Ajouter un lien à la fin des liens utiles (un a dans un li) avec pour url "http://news.humancoders.com/t/javascript" et libellé "Les news du JavaScript sur Human Coders"
-			//Faites le en deux étapes, premièrement ajoutez l'élément li à la fin du ul
-			//Ensuite ajoutez le lien à l'intérieur (ne pas utiliser :eq pour cibler le li voulu)
-            $('#links-list')
-                .append($('<li />')
-                .append($('<a />', { href: 'http://news.humancoders.com/t/javascript', text: 'Les news du JavaScript sur Human Coders' }))
-            );
-
-
-		});
-	</script>
-</body>
+        </script>
+    </body>
 </html>
