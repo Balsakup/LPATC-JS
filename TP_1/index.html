@@ -160,7 +160,7 @@
                 //Mettre toutes les checkboxes désactivées en gris
                 $('form input[type="checkbox"]:disabled').parent().css('background-color', '#999');
                 //Dans le formulaire, faites en sorte que l'input, le select et le textarea aient tous une largeur de 250 pixels (avec un seul sélecteur)
-                $('form :input').css('width', 250);
+                $('form :input:not([type="checkbox"])').css('width', 250);
 
                 // LIENS UTILES
                 //************************************************
