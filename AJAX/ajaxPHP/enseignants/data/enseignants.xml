@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<enseignants>
+	<enseignant xml:id="cagniot">
+		<nom>Cagniot Emmanuel</nom>
+		<modules>
+			<module>Responsable du Diplôme</module>
+			<module>Programmation Java</module>
+		</modules>
+	</enseignant>
+
+	<enseignant xml:id="lecarpentier">
+		<nom>Lecarpentier Jean-Marc</nom>
+		<modules>
+			<module>Technologies Internet</module>
+		</modules>
+	</enseignant>
+
+	<enseignant xml:id="madelaine">
+		<nom>Madelaine Jacques</nom>
+		<modules>
+			<module>Systèmes et Réseaux</module>
+			<module>Langages et Compilation</module>
+		</modules>
+	</enseignant>
+
+	<enseignant xml:id="saquet">
+		<nom>Saquet Jean</nom>
+		<modules>
+			<module>Système et Réseau</module>
+		</modules>
+	</enseignant>
+</enseignants>
