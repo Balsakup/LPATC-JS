@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<enseignant xml:id="saquet">
+	<nom>Saquet Jean</nom>
+	<modules>
+		<module>Système et Réseau</module>
+	</modules>
+</enseignant>

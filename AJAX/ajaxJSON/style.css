@@ -1,0 +1,9 @@
+nav {
+	float: left;
+	width: 200px;
+}
+
+section#details {
+	float: right;
+	width: 600px;
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<enseignant xml:id="lecarpentier">
+	<nom>Lecarpentier Jean-Marc</nom>
+	<modules>
+		<module>Technologies Internet</module>
+	</modules>
+</enseignant>

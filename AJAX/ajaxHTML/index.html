@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+		<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$('nav ul li').on('click', function() {
+				$.get(`enseignants/${$(this).attr('id')}.html`, function(response) {
+					$('#details').html(response)
+				}).fail(function(error) {
+					alert(`${error.statusText}\n${error.responseText}`)
+				})
+			})
+		});
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Enseignants de L3 Informatique</h1>
+			<h3>Avec Ajax et HTML simple</h3>
+		</header>
+
+		<nav>
+			<ul>
+				<li id="cagniot">Cagniot Emmanuel</li>
+				<li id="lecarpentier">Lecarpentier Jean-Marc</li>
+				<li id="madelaine">Madelaine Jacques</li>
+				<li id="saquet">Saquet Jean</li>
+			</ul>
+		</nav>
+
+		<section id="details">
+		</section>
+
+	</body>
+</html>
